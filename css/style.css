@@ -8,12 +8,47 @@
 
 /* Tipografía */
 @font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
+  font-family: 'AleoBold';
+  src: url('../font/aleo-bold-webfont.woff2') format('woff2'),
+       url('../font/aleo-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'AleoLigth';
+  src: url('../font/aleo-light-webfont.woff2') format('woff2'),
+       url('../font/aleo-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'AleoRegular';
+  src: url('../font/aleo-regular-webfont.woff2') format('woff2'),
+       url('../font/aleo-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 /* ******************************** */
 
 /* Colores */
-
+:root {
+  
+  --colo-estado-bueno: #b26014;
+  --color-blanco: #ffffff;
+  --color-botones-info-ingresar: #000000e3;
+  --color-cuadro-login-registro: #fffcfc78;
+  --color-estado-muyseguro: #12c10f;
+  --color-estado-seguro: #1b741f;
+  --color-text-negro-: #000000;
+  --color-texto-pagina: #faff03;
+  --cuadro-contraseñas: #000000a6;
+}
 /* ******************************** */
