@@ -50,5 +50,71 @@
   --color-text-negro-: #000000;
   --color-texto-pagina: #faff03;
   --cuadro-contraseñas: #000000a6;
+  
 }
 /* ******************************** */
+body{
+  
+  background-image: url(../img/desktop/imagenFondo1.webp);
+  background-position: center center;
+  background-size: cover; /* Esto ajusta el tamaño de la imagen para cubrir todo el cuerpo */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ 
+}
+/* HEADER */
+header{
+  
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+
+  
+  & nav {
+    
+    width: 100%;
+    font-family: "AleoBold";
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    & h2 {
+     
+      color: var(--color-texto-pagina);
+      margin-left: 10px;
+      
+    }
+    & a {
+      text-decoration: none;
+      color:var(--color-blanco);
+      font-family: "AleoBold";
+      font-size: 12px;
+      padding: 15px 25px;
+      
+  
+    }
+
+    /* Logo */
+    & .header__logo {
+      display: flex; 
+      align-items: center; 
+    
+      & .header__img-logo{
+        width: 70px;
+      }
+    }
+    & .header__boton-ingresar,.header__boton-info{
+      padding: 15px 40px;
+      border-radius: 8px;
+      background: var(--color-botones-info-ingresar);
+      color: var(--color-texto-pagina);
+      margin-left: auto;
+      margin-right: 30px;
+    }
+
+    & .header__boton-info {
+      margin-left: 5px; /* Espacio entre botones */
+    }
+  }
+}
+
