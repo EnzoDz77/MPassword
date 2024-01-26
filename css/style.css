@@ -118,3 +118,62 @@ header{
   }
 }
 
+/* Section Básico */
+
+.tituloPagina {
+  
+    color: var(--color-texto-pagina);
+    font-family: 'AleoBold';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0; /* Puedes ajustar el margen según tus necesidades */
+    white-space: pre-line;
+    text-align: left; /* Alinea el texto a la izquierda */
+    max-width: 100%; /* Establece el ancho máximo del contenedor */
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(-15%); /* Mueve el texto ligeramente hacia la izquierda */
+  
+}
+
+/* Generador */
+.generador_contraseñaBasico {
+  text-align: center;
+  padding: 20px;
+  
+}
+
+#passwordDisplay {
+  margin: 20px;
+  padding: 10px;
+  font-family: 'AleoRegular';
+  font-size: 20px;
+  background-color: var(--cuadro-contraseñas);
+  border: none;
+  border-radius: 8px;
+  color: var(--color-texto-pagina);
+  transform: translateX(-7%); /* Mueve el texto ligeramente hacia la izquierda */
+  filter: brightness(170%); /* Ajusta según tus preferencias */
+  width: 42%; /* O ajusta el ancho según tus necesidades */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  height: 75px; /* Ajusta la altura del campo de contraseña según tus necesidades */
+}
+
+.icon {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+}
+.textBasico{
+  font-size: 14px;
+  padding: 3%;
+  color: var(--color-texto-pagina);
+  font-family: 'AleoLigth';
+}
+
