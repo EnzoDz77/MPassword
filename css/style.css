@@ -101,8 +101,13 @@ header{
     
       & .header__img-logo{
         width: 70px;
+        
+        animation: girarLogo  3s ease-in-out infinite; 
+        /* Aplica la animación llamada "girar" durante 2 segundos con efecto ease-in-out e infinitamente repetida */
       }
     }
+    
+
     & .header__boton-ingresar,.header__boton-info{
       padding: 15px 40px;
       border-radius: 8px;
@@ -110,6 +115,7 @@ header{
       color: var(--color-texto-pagina);
       margin-left: auto;
       margin-right: 30px;
+      
     }
 
     & .header__boton-info {
@@ -118,6 +124,15 @@ header{
   }
 }
 
+/* Animacion  del Logo*/
+@keyframes girarLogo {
+  0%, 100% {
+      transform: rotateY(0deg); /* La rotación inicial y final es 0 grados (cara) */
+  }
+  50% {
+      transform: rotateY(180deg); /* Gira 180 grados (sello) */
+  }
+}
 /* Section Básico */
 
 .tituloPagina {
@@ -177,3 +192,25 @@ header{
   font-family: 'AleoLigth';
 }
 
+.btn_copiar{
+      border: none;
+      padding: 15px 40px;
+      border-radius: 8px;
+      background: var(--color-botones-info-ingresar);
+      color: var(--color-texto-pagina);
+      margin-left: auto;
+      margin-right: 30px;
+      font-family: 'AleoRegular';
+}
+
+/* Footer */
+.text_footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-family: 'AleoRegular';
+  color: var(--color-texto-pagina);
+    
+    margin-top: 50px;
+    padding: 20px;
+}
