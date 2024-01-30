@@ -54,24 +54,28 @@
             <h2>MPassword</h2>
           </a>
           <!-- Botones -->
-          <a href="login.html" class="header__boton-ingresar">Ingresar</a>
-          <a href="info.html" class="header__boton-info">Info</a>
+          <a href="info.html" class="header__boton-ingresar">Info</a>
+          
           </nav>
       </header>
       
       <!-- Main  -->
       <main>
         <!-- section y article (posibilidades dentro de main) -->
-            <section class="generador_contraseñaBasico">
-              
-              <h1 class="tituloPagina">Generador de <br>contraseñas aleatorias</h1>
-              <input type="text" id="passwordDisplay" placeholder="EDXzw78$" />
-              <button class="icon" onclick="generatePassword()">
-                <img src="./svg/actualizar.svg" alt="Icono de actualizar" />
-              </button>
-              <button class="btn_copiar">Copiar</button>
-              <p class="textBasico">"En el laboratorio de contraseñas, mezclamos ingredientes digitales para formar un elixir único de seguridad,<br>
-              proporcionándote tranquilidad en la era cibernética."</p>
+            <section class="login_usuario">
+              <form  method="post"  onsubmit="return validar()" novalidate>
+                <img class="logo_UsuarioLogin" src="./svg/logoUsuarioLogin.svg" alt="logo">
+                
+                <input type="text" id="nomUser" name="nomUser" placeholder="Usuario"><br/>
+                <input type="password" id="pass" name="pass" placeholder="Contraseña"><br/>
+                
+                <br/><input type="submit" value="Acceso">
+                <a href="registro.html" class="text_Login">
+                  
+                  ¿No tienes cuenta? Regístrate
+                </a>
+                
+            </form>
             </section>
 
       </main>
@@ -79,8 +83,11 @@
               
       <!-- Footer (final de la página, zona inferior) -->
       <footer>
-          <p class="text_footer">¿Sientes que la contraseña sigue siendo débil?<br>
-            Regístrate y obtén  mas configuraciones a tus gustos.</p>
+        
+        
+        <img class="img_login" src="./img/desktop/imgLoginRegistro.webp" alt="logo">
+        
+
       </footer>
     </div>
 

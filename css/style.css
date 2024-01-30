@@ -50,6 +50,7 @@
   --color-text-negro-: #000000;
   --color-texto-pagina: #faff03;
   --cuadro-contraseñas: #000000a6;
+  --cuadro-loginy-registro: #00000085;
   
 }
 /* ******************************** */
@@ -203,14 +204,78 @@ header{
       font-family: 'AleoRegular';
 }
 
-/* Footer */
+/* Footer Index HTML*/
 .text_footer{
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   font-family: 'AleoRegular';
   color: var(--color-texto-pagina);
-    
-    margin-top: 50px;
+  margin-top: 50px;
     padding: 20px;
 }
+
+/* ==================================================================================== */
+
+/* LOGIN HTML  */
+.login_usuario{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52px;
+  transform: translateX(-13%); /* Mueve el texto ligeramente hacia la izquierda */
+}
+form{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+	width:300px;
+	padding:16px;
+	border-radius:10px;
+	border-radius: 20px;
+  background-color: var(--cuadro-loginy-registro);
+    
+}
+/* Formulario */
+#nomUser::placeholder,
+#pass::placeholder {
+  color: var(--color-text-negro-);
+}
+
+form input[type="password"],form input[type="text"]{
+	width:180px;
+	border: 0;
+	border-radius:10px;
+	background-color: var(--color-cuadro-login-registro);
+	
+}
+
+form input[type="submit"]{
+  
+  width:100px;
+  border: 0;
+  color: var(--color-text-negro-);
+  font-family: 'AleoBold';
+  background-color: var(--color-texto-pagina);
+  border-radius: 10px;
+}
+
+.text_Login{
+  font-family: 'AleoLigth';
+  color: var(--color-texto-pagina);
+  text-decoration: none;
+}
+/* Footer Login HTML*/
+
+.img_login {
+  
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px; /* Ajusta el margen según sea necesario */
+  width: 300px; /* Ajusta el tamaño según tus necesidades */
+  height: 300px; /* Ajusta el tamaño según tus necesidades */
+  
+}
+
