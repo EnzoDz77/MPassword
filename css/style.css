@@ -61,16 +61,27 @@ body{
   background-size: cover; /* Esto ajusta el tamaño de la imagen para cubrir todo el cuerpo */
   background-repeat: no-repeat;
   background-attachment: fixed;
- 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+#container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 1250px;
+  width: 100%;
+  height: 100vh;
 }
 /* HEADER */
 header{
-  
   display: flex;
   justify-content: space-between; 
   align-items: center;
-
-  
+  width: 100%;
   & nav {
     
     width: 100%;
@@ -116,7 +127,7 @@ header{
       color: var(--color-texto-pagina);
       margin-left: auto;
       margin-right: 30px;
-      
+      font-size: 16px;
     }
 
     & .header__boton-info {
@@ -137,60 +148,74 @@ header{
 /* Section Básico */
 
 .tituloPagina {
-  
-    color: var(--color-texto-pagina);
-    font-family: 'AleoBold';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 50px 0; /* Puedes ajustar el margen según tus necesidades */
-    white-space: pre-line;
-    text-align: left; /* Alinea el texto a la izquierda */
-    max-width: 100%; /* Establece el ancho máximo del contenedor */
-    margin-left: auto;
-    margin-right: auto;
-    transform: translateX(-15%); /* Mueve el texto ligeramente hacia la izquierda */
-  
+  color: var(--color-texto-pagina);
+  font-family: "AleoBold";
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  max-width: 100%; /* Establece el ancho máximo del contenedor */
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 /* Generador */
 .generador_contraseñaBasico {
   text-align: center;
-  padding: 20px;
-  
+  margin: auto;
+
 }
 
-#passwordDisplay {
+/* #passwordDisplay { 
   margin: 20px;
   padding: 10px;
-  font-family: 'AleoRegular';
+  font-family: "AleoRegular";
   font-size: 20px;
   background-color: var(--cuadro-contraseñas);
   border: none;
   border-radius: 8px;
   color: var(--color-texto-pagina);
-  transform: translateX(-7%); /* Mueve el texto ligeramente hacia la izquierda */
-  filter: brightness(170%); /* Ajusta según tus preferencias */
-  width: 42%; /* O ajusta el ancho según tus necesidades */
-  box-sizing: border-box; /* Incluye el padding en el ancho total */
-  height: 75px; /* Ajusta la altura del campo de contraseña según tus necesidades */
-}
+  transform: translateX(
+    -7%
+  )           // Mueve el texto ligeramente hacia la izquierda 
+  
+  width: 42%; // O ajusta el ancho según tus necesidades 
+  box-sizing: border-box; // Incluye el padding en el ancho total 
+  height: 75px; // Ajusta la altura del campo de contraseña según tus necesidades 
+  
+  
+  text-align: left;
+  } */
 
-.icon {
+  #passwordDisplay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "AleoRegular";
+  font-size: 20px;
+  background: var(--cuadro-contraseñas);
+  width: 89%;
+  height: 65px;
+  padding: 12px;
+  margin: 40px;
+  border-radius: 8px;
+  color: var(--color-texto-pagina);
+  }
+
+.refrescar {
   cursor: pointer;
   border: none;
   background: none;
+  margin-left: auto;
+  
 }
 
-.icon img {
-  width: 40px;
-  height: 40px;
-}
+
 .textBasico{
   font-size: 14px;
   padding: 3%;
   color: var(--color-texto-pagina);
-  font-family: 'AleoLigth';
+  font-family: "AleoLigth";
 }
 
 .btn_copiar{
@@ -199,20 +224,25 @@ header{
       border-radius: 8px;
       background: var(--color-botones-info-ingresar);
       color: var(--color-texto-pagina);
-      margin-left: auto;
-      margin-right: 30px;
       font-family: 'AleoRegular';
+      
 }
 
 /* Footer Index HTML*/
-.text_footer{
+footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
+}
+
+.text_footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
   font-family: 'AleoRegular';
   color: var(--color-texto-pagina);
   margin-top: 50px;
-    padding: 20px;
+  padding: 20px;
 }
 
 /* ==================================================================================== */
@@ -222,18 +252,22 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 52px;
-  transform: translateX(-13%); /* Mueve el texto ligeramente hacia la izquierda */
+  
+  transform: translateX(
+    -13%
+  ); /* Mueve el texto ligeramente hacia la izquierda */
 }
 form{
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
-	width:300px;
-	padding:16px;
-	border-radius:10px;
-	border-radius: 20px;
+  width: 320px;
+  height: 350px;
+  padding: 16px;
+  
+  border-radius: 10px;
+  border-radius: 20px;
   background-color: var(--cuadro-loginy-registro);
     
 }
@@ -243,26 +277,43 @@ form{
   color: var(--color-text-negro-);
 }
 
+#nomUser{
+      padding-left: 30px; /* Espacio para el icono a la izquierda */
+      background-image: url('../svg/icoUsuarioL.svg'); 
+      background-repeat: no-repeat;
+      background-position: 5px 50%; 
+      background-size: 18px 18px; 
+}
+
+#pass{
+  padding-left: 30px; /* Espacio para el icono a la izquierda */
+  background-image: url('../svg/icoUsuarioContra.svg'); /* Ruta a tu archivo SVG */
+  background-repeat: no-repeat;
+  background-position: 5px 50%; /* Ajusta según sea necesario */
+  background-size: 18px 18px; /* Ajusta el tamaño del icono según sea necesario */
+}
 form input[type="password"],form input[type="text"]{
-	width:180px;
-	border: 0;
-	border-radius:10px;
-	background-color: var(--color-cuadro-login-registro);
-	
+	width: 180px;
+  border: 0;
+  height: 35px;
+  border-radius: 8px;
+  background-color: var(--color-cuadro-login-registro);
+  margin-top: 15px;
 }
 
 form input[type="submit"]{
-  
-  width:100px;
+  width: 100px;
   border: 0;
   color: var(--color-text-negro-);
-  font-family: 'AleoBold';
+  font-family: "AleoBold";
   background-color: var(--color-texto-pagina);
-  border-radius: 10px;
+  border-radius: 8px;
+  height: 28px;
+  margin-top: 15px;
 }
 
 .text_Login{
-  font-family: 'AleoLigth';
+  font-family: "AleoLigth";
   color: var(--color-texto-pagina);
   text-decoration: none;
 }

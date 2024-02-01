@@ -54,25 +54,28 @@
             <h2>MPassword</h2>
           </a>
           <!-- Botones -->
-          <a href="login.html" class="header__boton-ingresar">Ingresar</a>
-          <a href="info.html" class="header__boton-info">Info</a>
+          <a href="info.html" class="header__boton-ingresar">Info</a>
+          
           </nav>
       </header>
       
       <!-- Main  -->
       <main>
         <!-- section y article (posibilidades dentro de main) -->
-            <section class="generador_contraseñaBasico">
-              
-              <h1 class="tituloPagina">Generador de <br>contraseñas aleatorias</h1>
-              
-              <div id="passwordDisplay">EDXzw78$ 
-                <img class="refrescar" src="./svg/actualizar.svg"  onclick="actualizarpassword()" alt="" />   
-              </div>
-              
-              <button class="btn_copiar">Copiar</button>
-              <p class="textBasico">"En el laboratorio de contraseñas, mezclamos ingredientes digitales para formar un elixir único de seguridad,<br>
-              proporcionándote tranquilidad en la era cibernética."</p>
+            <section class="login_usuario">
+              <form  method="post"  onsubmit="return validar()" novalidate>
+                <img class="logo_UsuarioLogin" src="./svg/logoUsuarioLogin.svg" alt="logo">
+                
+                <input type="text" id="nomUserRegis" name="nomUser" placeholder="Nombre de Usuario">
+                <input type="email" id="email" name="email" placeholder="Correo Electrónico">
+                <input type="password" id="pass" name="pass" placeholder="Contraseña">
+                <input type="password" id="pass2" name="pass2" placeholder="Confirmar Contraseña">
+                <input type="submit" value="Crear Cuenta">
+
+                
+                
+                
+            </form>
             </section>
 
       </main>
@@ -80,8 +83,11 @@
               
       <!-- Footer (final de la página, zona inferior) -->
       <footer>
-          <p class="text_footer">¿Sientes que la contraseña sigue siendo débil?<br>
-            Regístrate y obtén  mas configuraciones a tus gustos.</p>
+        
+        
+        <img class="img_login" src="./img/desktop/imgLoginRegistro.webp" alt="logo">
+        
+
       </footer>
     </div>
 
