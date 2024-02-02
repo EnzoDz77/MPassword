@@ -163,7 +163,6 @@ header{
 .generador_contraseñaBasico {
   text-align: center;
   margin: auto;
-
 }
 
 /* #passwordDisplay { 
@@ -257,7 +256,7 @@ footer {
     -13%
   ); /* Mueve el texto ligeramente hacia la izquierda */
 }
-form{
+.loginF {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -330,3 +329,117 @@ form input[type="submit"]{
   
 }
 
+/* ======================================================================================= */
+
+/* Registro Usuario HTML */
+.registro_usuario{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-13%); /* Mueve el texto ligeramente hacia la izquierda */
+}
+
+.registro_usuarioF{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 470px;
+  padding: 16px;
+  border-radius: 10px;
+  border-radius: 20px;
+  background-color: var(--cuadro-loginy-registro);
+}
+
+form input[id="passRegis1"],form input[id="passRegis2"],
+form input[id="nomUserRegis"],form input[id="emailRegis"]{
+	width: 200px;
+  border: 0;
+  height: 35px;
+  border-radius: 8px;
+  background-color: var(--color-cuadro-login-registro);
+  margin-top: 15px;
+}
+
+form input[id="Ccuenta"]{
+	width: 120px;
+  border: 0;
+  color: var(--color-text-negro-);
+  font-family: "AleoBold";
+  background-color: var(--color-texto-pagina);
+  border-radius: 8px;
+  height: 35px;
+  margin-top: 10px;
+}
+
+#passRegis1,#passRegis2{
+  padding-left: 30px; /* Espacio para el icono a la izquierda */
+  background-image: url('../svg/icoUsuarioContra.svg'); /* Ruta a tu archivo SVG */
+  background-repeat: no-repeat;
+  background-position: 5px 50%; /* Ajusta según sea necesario */
+  background-size: 18px 18px; /* Ajusta el tamaño del icono según sea necesario */
+}
+
+#nomUserRegis{
+  padding-left: 30px; /* Espacio para el icono a la izquierda */
+  background-image: url('../svg/icoUsuarioR.svg'); /* Ruta a tu archivo SVG */
+  background-repeat: no-repeat;
+  background-position: 5px 50%; /* Ajusta según sea necesario */
+  background-size: 18px 18px; /* Ajusta el tamaño del icono según sea necesario */
+}
+
+#emailRegis{
+  padding-left: 30px; /* Espacio para el icono a la izquierda */
+  background-image: url('../svg/icoGmail.svg'); /* Ruta a tu archivo SVG */
+  background-repeat: no-repeat;
+  background-position: 5px 50%; /* Ajusta según sea necesario */
+  background-size: 18px 18px; /* Ajusta el tamaño del icono según sea necesario */
+}
+
+/* Footer Registro HTML*/
+
+.img_registro {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px; /* Ajusta el margen según sea necesario */
+  width: 300px; /* Ajusta el tamaño según tus necesidades */
+  height: 300px; /* Ajusta el tamaño según tus necesidades */
+}
+
+/* =========================================================================================== */
+
+/* USER HTML */
+
+.generador_contraseñaUsuario {
+  text-align: center;
+  margin: auto;
+}
+
+.estadoContraseña{
+  display: inline-block;
+  background-color: var(--colo-estado-bueno);
+  color: var(--color-blanco);
+  border-radius: 8px;
+  height: 30px;
+  width: 30%;
+  margin-top: 10px;
+  padding: 2px;
+  font-family: 'AleoRegular';
+}
+
+  #caracteres {
+    width: 65px; /* Ajusta el ancho según tus necesidades */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    color: var(--color-texto-pagina);
+    background-color: var(--cuadro-contraseñas);
+  }
+  
+  #caracteres:hover,
+  #caracteres:focus {
+    border-color:var(--color-texto-pagina); 
+  }

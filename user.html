@@ -54,28 +54,34 @@
             <h2>MPassword</h2>
           </a>
           <!-- Botones -->
-          <a href="info.html" class="header__boton-ingresar">Info</a>
-          
+          <a href="login.html" class="header__boton-ingresar">Ver Contraseñas</a>
+          <a href="index.html" class="header__boton-info">Cerrar Sesión</a>
           </nav>
       </header>
       
       <!-- Main  -->
       <main>
         <!-- section y article (posibilidades dentro de main) -->
-            <section class="login_usuario">
-              <form class="loginF"  method="post"  onsubmit="return validar()" novalidate>
-                <img class="logo_UsuarioLogin" src="./svg/logoUsuarioLogin.svg" alt="logo">
-                
-                <input type="text" id="nomUser" name="nomUser" placeholder="Usuario">
-                <input type="password" id="pass" name="pass" placeholder="Contraseña">
-                <input type="submit" value="Acceso">
-
-
-                <a href="registro.html" class="text_Login"> 
-                  ¿No tienes cuenta? Regístrate
-                </a>
-                
-            </form>
+            <section class="generador_contraseñaUsuario">
+              
+              <h1 class="tituloPagina">Generador de <br>contraseñas aleatorias</h1>
+              <div class="estadoContraseña">Buena</div>
+              <div id="passwordDisplay">EDXzw78$ 
+                <img class="refrescar" src="./svg/actualizar.svg"  onclick="actualizarpassword()" alt="" />   
+              </div>
+              <button class="btn_copiar">Copiar</button>
+              <form>
+                <label for="quantity">Ajustes Avanzados:</label><br>
+                <input type="checkbox" id="mayusculas" name="mayusculas" value="ABC">
+                <label for="mayusculas"> ABC</label><br>
+                <input type="checkbox" id="minusculas" name="minusculas" value="abc">
+                <label for="minusculas"> abc</label><br>
+                <input type="checkbox" id="numeros" name="numers" value="123">
+                <label for="numeros"> 123</label><br>
+                <input type="checkbox" id="signos" name="signos" value="#@$">
+                <label for="signos"> #@$</label><br><br>
+                <input type="number" id="caracteres" name="caracteres" min="8" max="20" value="8">
+              </form>
             </section>
 
       </main>
@@ -83,11 +89,7 @@
               
       <!-- Footer (final de la página, zona inferior) -->
       <footer>
-        
-        
-        <img class="img_login" src="./img/desktop/imgLoginRegistro.webp" alt="logo">
-        
-
+          
       </footer>
     </div>
 
