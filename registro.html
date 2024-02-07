@@ -40,7 +40,7 @@
     <!-- Código de las plataformas de Análisis -->
     <script></script>
     <!-- Scripts a cargar antes de la renderización -->
-    <script src=""></script>
+    <script src="./js/script.js"></script>
   </head>
   <body>
     <div id="container">
@@ -63,7 +63,7 @@
       <main>
         <!-- section y article (posibilidades dentro de main) -->
             <section class="registro_usuario">
-              <form class="registro_usuarioF" method="post"  onsubmit="return validar()" novalidate>
+              <form class="registro_usuarioF" method="post"  onsubmit="return validarRegistro()" novalidate>
                 <img class="logo_UsuarioRegistro" src="./svg/icoUsuarioRP.svg" alt="logo">
                 
                 <input type="text" id="nomUserRegis" name="nomUser" placeholder="Nombre de Usuario">

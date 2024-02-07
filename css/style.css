@@ -372,6 +372,10 @@ form input[id="Ccuenta"]{
   margin-top: 10px;
 }
 
+::placeholder {
+  color: #343434; /* Color más oscuro para el placeholder */
+}
+
 #passRegis1,#passRegis2{
   padding-left: 30px; /* Espacio para el icono a la izquierda */
   background-image: url('../svg/icoUsuarioContra.svg'); /* Ruta a tu archivo SVG */
@@ -443,3 +447,14 @@ form input[id="Ccuenta"]{
   #caracteres:focus {
     border-color:var(--color-texto-pagina); 
   }
+
+
+label{
+  color: var(--color-texto-pagina);
+  display: inline-block;
+}
+
+input[type="checkbox"] {
+  display: inline-block; /* Mostrar en línea */
+  margin-right: 5px; /* Espacio entre los checkboxes */
+}
