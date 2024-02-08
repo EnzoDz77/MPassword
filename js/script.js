@@ -1,7 +1,4 @@
-// Validación de la contraseña Básica
-function actualizarpasswordBasico(){
 
-}
 
 // Validación de Registro 
 function validarRegistro(){
@@ -48,17 +45,19 @@ function validarRegistro(){
 }
 
 // ==================================================================================================
-document.addEventListener('DOMContentLoaded', function() {
-    // Esta función se ejecutará después de que el DOM esté completamente cargado
-    // Agregar el evento 'click' al elemento con la clase 'refrescar'
-    document.querySelector(".refrescar").addEventListener("click", actualizarContrasena);
-});
+// GENERADOR DE CONTRASEÑA BÁSICO
 
-function generarContrasena() {
+document.addEventListener('DOMContentLoaded', function() {
+// Esta función se ejecutará después de que el DOM esté completamente cargado
+// Agregar el evento 'click' al elemento con el id 'refrescarBasico'
+document.getElementById("refrescarBasico").addEventListener("click", actualizarContrasena);
+
+
+    function generarContrasena() {
     var letrasMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
     var numeros = "0123456789";
-    var simbolos = "!@#$%^&*()-_=+";
+    var simbolos = "!@#$%^&*-_=+";
 
     // Asegurarse de incluir al menos un carácter de cada tipo
     var primeraSeccion = letrasMayusculas.charAt(Math.floor(Math.random() * letrasMayusculas.length));
@@ -68,7 +67,7 @@ function generarContrasena() {
 
     // Resto de la longitud de la contraseña después de incluir al menos un carácter de cada tipo
     var longitudRestante = 4;
-    var longitud = 8; // Longitud total de la contraseña (siempre 8 caracteres)
+    
     
     var caracteres = letrasMayusculas + letrasMinusculas + numeros + simbolos;
     var contrasena = primeraSeccion + segundaSeccion + terceraSeccion + cuartaSeccion;
@@ -96,18 +95,39 @@ function generarContrasena() {
     }
 
     return contrasena;
-}
-
-
-
+    }
 
 // Función para manejar la generación de contraseña y la actualización del texto de la contraseña
-function actualizarContrasena() {
+    function actualizarContrasena() {
     var contrasenaGenerada = generarContrasena();
     var passwordText = document.getElementById("passwordText");
     // Actualizar solo el texto de la contraseña generada
     passwordText.textContent = contrasenaGenerada;
+    }
+});
+
+
+// =============================================================================================
+// GENERADOR DE CONTRASEÑA AVANZADO
+
+
+// =============================================================================================
+// FUNCIÓN PARA EL BOTON COPIAR
+function copiarPortapapeles(){
+const boton = document.querySelector(".btn_copiar");
+const text = document.getElementById("passwordText");
+
+const copiarBtn = async str => {
+  try {
+    await navigator.clipboard.writeText(str);
+    alert("¡¡La contraseña fué copiada  correctamente!!");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+boton.addEventListener("click", () => {
+    copiarBtn(text.textContent);
+})
 }
-
-
 

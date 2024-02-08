@@ -218,6 +218,7 @@ header{
 }
 
 .btn_copiar{
+      cursor: pointer;
       border: none;
       padding: 15px 40px;
       border-radius: 8px;
@@ -358,7 +359,7 @@ form input[id="nomUserRegis"],form input[id="emailRegis"]{
   height: 35px;
   border-radius: 8px;
   background-color: var(--color-cuadro-login-registro);
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 form input[id="Ccuenta"]{
@@ -369,7 +370,7 @@ form input[id="Ccuenta"]{
   background-color: var(--color-texto-pagina);
   border-radius: 8px;
   height: 35px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 ::placeholder {
@@ -432,7 +433,7 @@ form input[id="Ccuenta"]{
   font-family: 'AleoRegular';
 }
 
-  #caracteres {
+  #longitud {
     width: 65px; /* Ajusta el ancho según tus necesidades */
     padding: 8px;
     font-size: 16px;
@@ -443,8 +444,8 @@ form input[id="Ccuenta"]{
     background-color: var(--cuadro-contraseñas);
   }
   
-  #caracteres:hover,
-  #caracteres:focus {
+  #longitud:hover,
+  #longitud:focus {
     border-color:var(--color-texto-pagina); 
   }
 
@@ -458,3 +459,4 @@ input[type="checkbox"] {
   display: inline-block; /* Mostrar en línea */
   margin-right: 5px; /* Espacio entre los checkboxes */
 }
+
