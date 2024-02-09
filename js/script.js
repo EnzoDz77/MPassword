@@ -116,53 +116,60 @@ document.addEventListener('DOMContentLoaded', function() {
 // Agregar el evento 'click' al elemento con el id 'refrescarBasico'
 document.getElementById("refrescarAvanzado").addEventListener("click", actualizarContrasenaAvanzada);
 
-    function generarContrasenaAvanzada(){
-        let checkMayu=document.getElementById("mayusculas").value;
-        let checkMinu=document.getElementById("minusculas").value;
-        let checkNum=document.getElementById("numeros").value;
-        let checkSign=document.getElementById("signos").value;
-        let longitud = document.getElementById("longitud").value;
-        let letrasMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
-        let numeros = "0123456789";
-        let simbolos = "!@#$%^&*-_=+";
-        
-            
-        let primeraSeccion = letrasMayusculas.charAt(Math.floor(Math.random() * letrasMayusculas.length));
-        let segundaSeccion = letrasMinusculas.charAt(Math.floor(Math.random() * letrasMinusculas.length));
-        let terceraSeccion = numeros.charAt(Math.floor(Math.random() * numeros.length));
-        let cuartaSeccion = simbolos.charAt(Math.floor(Math.random() * simbolos.length));
-        // Resto de la longitud de la contraseña después de incluir al menos un carácter de cada tipo
-        var longitudRestante = longitud-4;
-    
-    
-        var caracteres = letrasMayusculas + letrasMinusculas + numeros + simbolos;
-        var contrasena = primeraSeccion + segundaSeccion + terceraSeccion + cuartaSeccion;
 
-        // Eliminar caracteres utilizados en las secciones previas para evitar repeticiones
-        caracteres = caracteres.replace(primeraSeccion, '');
-        caracteres = caracteres.replace(segundaSeccion, '');
-        caracteres = caracteres.replace(terceraSeccion, '');
-        caracteres = caracteres.replace(cuartaSeccion, '');
 
-        // Generar el resto de la contraseña con caracteres aleatorios y sin repeticiones
-        for (var i = 0; i < longitudRestante; i++) {
-        var caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
-        // Verificar si el nuevo carácter es una letra mayúscula o minúscula y si el último carácter generado también lo es
-        if ((letrasMayusculas.includes(contrasena.slice(-1)) || letrasMinusculas.includes(contrasena.slice(-1))) &&
-            (letrasMayusculas.includes(caracterAleatorio) || letrasMinusculas.includes(caracterAleatorio))) {
-            // Si es así, elegir otro carácter aleatorio hasta que no sea una letra
-            while (letrasMayusculas.includes(caracterAleatorio) || letrasMinusculas.includes(caracterAleatorio)) {
-                caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
-            }
-        }
-        contrasena += caracterAleatorio;
-        // Eliminar el carácter utilizado para evitar repeticiones
-        caracteres = caracteres.replace(caracterAleatorio, '');
+function generarContrasenaAvanzada(){
+    // Obtener el estado de las casillas y la longitud desde el DOM
+    let checkMayu = document.getElementById("mayusculas").checked;
+    let checkMinu = document.getElementById("minusculas").checked;
+    let checkNum = document.getElementById("numeros").checked;
+    let checkSign = document.getElementById("signos").checked;
+    let longitud = parseInt(document.getElementById("longitud").value);
+    
+    let letrasMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
+    let numeros = "0123456789";
+    let simbolos = "!@#$%^&*-_=+";
+    
+    let contrasena = '';
+    let caracteresRestantes = '';
+    // Verificar si todas las casillas están desmarcadas
+    if (!checkMayu && !checkMinu && !checkNum && !checkSign) {
+       alert('¡ERROR! No puedes generar una contraseña vacía. ')
+   }
+    // Verificar si todas las casillas están desmarcadas
+    if (!checkMayu && !checkMinu && !checkNum && !checkSign) {
+        // Marcar una casilla aleatoria por defecto
+        const checkboxes = ["mayusculas", "minusculas", "numeros", "signos"];
+        const randomCheckbox = checkboxes[Math.floor(Math.random() * checkboxes.length)];
+        document.getElementById(randomCheckbox).checked = true;
     }
-
+    
+    // Agregar al menos un carácter de cada propiedad si todas las casillas están marcadas
+    if (checkMayu && checkMinu && checkNum && checkSign) {
+        contrasena += letrasMayusculas.charAt(Math.floor(Math.random() * letrasMayusculas.length));
+        contrasena += letrasMinusculas.charAt(Math.floor(Math.random() * letrasMinusculas.length));
+        contrasena += numeros.charAt(Math.floor(Math.random() * numeros.length));
+        contrasena += simbolos.charAt(Math.floor(Math.random() * simbolos.length));
+        longitud -= 4; // Restar 4 caracteres de la longitud total
+    }
+    
+    // Construir los caracteres restantes basados en las casillas marcadas
+    if (checkMayu) caracteresRestantes += letrasMayusculas;
+    if (checkMinu) caracteresRestantes += letrasMinusculas;
+    if (checkNum) caracteresRestantes += numeros;
+    if (checkSign) caracteresRestantes += simbolos;
+    
+    // Completar la longitud restante con caracteres aleatorios
+    for (let i = 0; i < longitud; i++) {
+        contrasena += caracteresRestantes.charAt(Math.floor(Math.random() * caracteresRestantes.length));
+    }
+    
+    // Mezclar los caracteres de la contraseña para mayor aleatoriedad
+    contrasena = contrasena.split('').sort(function(){return 0.5-Math.random()}).join('');
+    
     return contrasena;
-    }
+   }
 
     function actualizarContrasenaAvanzada() {
         var contrasenaGenerada = generarContrasenaAvanzada();
