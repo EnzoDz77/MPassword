@@ -1,6 +1,8 @@
 <?php
 
-    include("conexion.php");
+    include("./conexion.php");
+    
+    
     // CAPA DE SEGURIDAD
     //Nombre de Usuario 
     $nombreUsuario=$_POST["nomUserRegis"];
