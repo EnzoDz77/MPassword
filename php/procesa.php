@@ -1,11 +1,6 @@
 <?php
 
-    // Conexión a la base de datos.
-    $host='localhost';
-    $user="edib";
-    $password="edib";
-    $bd="usuarios";
-
+    include("conexion.php");
     // CAPA DE SEGURIDAD
     //Nombre de Usuario 
     $nombreUsuario=$_POST["nomUserRegis"];
@@ -35,7 +30,7 @@
 
         $resultado=mysqli_query($conector,$sentencia);
         if($resultado){
-            echo "Bienvenido ".$nombreUsuario . "con correo :".$email; 
+            echo "Bienvenido ".$nombreUsuario . " con correo :".$email; 
         }else{
             echo "Error al registrarse";
         }
