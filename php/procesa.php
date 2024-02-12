@@ -23,14 +23,13 @@
     // Validación de contraseñas  
     $pass1=$_POST['passRegis1'];
     $pass2=$_POST['passRegis2'];
-    
-    // 
 
     if($pass1!==$pass2){
         echo"¡¡Las contraseñas deben ser las mismas.!!";
     }
 
-        
+    // INSERTAR EL USUARIO EN LA BASE DE DATOS 
+
         $sentencia = "INSERT INTO `user` ( `nom_usuario`, `correo`, `contrasena`)
         VALUES ('$nombreUsuario','$email','$pass1')";
 
