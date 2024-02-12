@@ -1,8 +1,13 @@
 <?php
+<<<<<<< HEAD
+=======
     
-    // INCLUIR LA CONEXION 
-    include("conexion.php");
-    
+    // Conexión a la base de datos.
+    $host='localhost';
+    $user="edib";
+    $password="edib";
+    $bd="usuarios";
+
     // CAPA DE SEGURIDAD
     //Nombre de Usuario 
     $nombreUsuario=$_POST["nomUserRegis"];
@@ -20,20 +25,33 @@
     // Validación de contraseñas  
     $pass1=$_POST['passRegis1'];
     $pass2=$_POST['passRegis2'];
+<<<<<<< HEAD
+    
+=======
     // 
+>>>>>>> 02f1f3d48f5e2b2915b02158e40562ef1e4e622d
 
     if($pass1!==$pass2){
         echo"¡¡Las contraseñas deben ser las mismas.!!";
     }
 
+<<<<<<< HEAD
+        $sentencia="INSERT INTO `user` (`id_usuario`, `nom_usuario`, `correo`, `contrasena`)
+        VALUES (NULL, '$nombreUsuario' , '$email', '$pass1')";
+=======
         $sentencia = "INSERT INTO `user` ( `nom_usuario`, `correo`, `contrasena`)
         VALUES ('$nombreUsuario','$email','$pass1')";
 
+>>>>>>> 02f1f3d48f5e2b2915b02158e40562ef1e4e622d
         
         $resultado=mysqli_query($conector,$sentencia);
         if($resultado){
             echo "Bienvenido ".$nombreUsuario . "con correo :".$email; 
         }else{
             echo "Error al registrarse";
-        }
+    }
+    }else{
+        echo "No se pudo conectar al servidor".mysqli_connect_error();
+    }
 ?>
+>>>>>>> 02f1f3d48f5e2b2915b02158e40562ef1e4e622d
