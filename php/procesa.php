@@ -33,7 +33,7 @@
         $resultado=mysqli_query($conector,$sentencia);
         if($resultado){
             session_start();
-            header('location: user.html');
+            header('location: ../user.html');
         }else{
             echo "Error al registrarse";
         }
