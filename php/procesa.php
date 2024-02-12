@@ -25,14 +25,15 @@
         echo"¡¡Las contraseñas deben ser las mismas.!!";
     }
 
-    // INSERTAR EL USUARIO EN LA BASE DE DATOS 
 
+        // INSERTAR EL USUARIO EN LA BASE DE DATOS 
         $sentencia = "INSERT INTO `user` ( `nom_usuario`, `correo`, `contrasena`)
         VALUES ('$nombreUsuario','$email','$pass1')";
 
         $resultado=mysqli_query($conector,$sentencia);
         if($resultado){
-            echo "Bienvenido ".$nombreUsuario . " con correo :".$email; 
+            session_start();
+            header('location: user.html');
         }else{
             echo "Error al registrarse";
         }
