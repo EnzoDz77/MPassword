@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 02f1f3d48f5e2b2915b02158e40562ef1e4e622d
     // Conexión a la base de datos.
     $host='localhost';
     $user="edib";
@@ -22,7 +26,11 @@
     // Validación de contraseñas  
     $pass1=$_POST['passRegis1'];
     $pass2=$_POST['passRegis2'];
+<<<<<<< HEAD
     
+=======
+    // 
+>>>>>>> 02f1f3d48f5e2b2915b02158e40562ef1e4e622d
 
     if($pass1!==$pass2){
         echo"¡¡Las contraseñas deben ser las mismas.!!";
@@ -32,8 +40,14 @@
     if($conector){
         echo "Servidor conectado correctamete, Bienvenido".$user."!!"; 
 
+<<<<<<< HEAD
         $sentencia="INSERT INTO `user` (`id_usuario`, `nom_usuario`, `correo`, `contrasena`)
         VALUES (NULL, '$nombreUsuario' , '$email', '$pass1')";
+=======
+        $sentencia = "INSERT INTO `user` ( `nom_usuario`, `correo`, `contrasena`)
+        VALUES ('$nombreUsuario','$email','$pass1')";
+
+>>>>>>> 02f1f3d48f5e2b2915b02158e40562ef1e4e622d
         
         $resultado=mysqli_query($conector,$sentencia);
         if($resultado){
@@ -44,4 +58,8 @@
     }else{
         echo "No se pudo conectar al servidor".mysqli_connect_error();
     }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 02f1f3d48f5e2b2915b02158e40562ef1e4e622d
