@@ -63,20 +63,20 @@
       <main>
         <!-- section y article (posibilidades dentro de main) -->
             <section class="registro_usuario">
-              <form class="registro_usuarioF" method="post"  onsubmit="return validarRegistro()" novalidate>
+              <form action="./php/procesa.php" class="registro_usuarioF" method="post"  onsubmit="return validarRegistro()" novalidate>
                 <img class="logo_UsuarioRegistro" src="./svg/icoUsuarioRP.svg" alt="logo">
                 
-                <input type="text" id="nomUserRegis" name="nomUser" placeholder="Nombre de Usuario">
-                <input type="email" id="emailRegis" name="email" placeholder="Correo Electrónico">
-                <input type="password" id="passRegis1" name="pass" placeholder="Contraseña">
-                <input type="password" id="passRegis2" name="pass2" placeholder="Confirmar Contraseña">
+                <input type="text" id="nomUserRegis" name="nomUserRegis" placeholder="Nombre de Usuario">
+                <input type="email" id="emailRegis" name="emailRegis" placeholder="Correo Electrónico">
+                <input type="password" id="passRegis1" name="passRegis1" placeholder="Contraseña">
+                <input type="password" id="passRegis2" name="passRegis2" placeholder="Confirmar Contraseña">
                 <input type="submit" id="Ccuenta"value="Crear Cuenta">
 
               </form>
             </section>
 
       </main>
-      
+ 
               
       <!-- Footer (final de la página, zona inferior) -->
       <footer>
