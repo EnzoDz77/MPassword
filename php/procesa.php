@@ -1,11 +1,8 @@
 <?php
     
-    // Conexión a la base de datos.
-    $host='localhost';
-    $user="edib";
-    $password="edib";
-    $bd="usuarios";
-
+    // INCLUIR LA CONEXION 
+    include("conexion.php");
+    
     // CAPA DE SEGURIDAD
     //Nombre de Usuario 
     $nombreUsuario=$_POST["nomUserRegis"];
@@ -29,10 +26,6 @@
         echo"¡¡Las contraseñas deben ser las mismas.!!";
     }
 
-    $conector=mysqli_connect($host,$user,$password,$bd);
-    if($conector){
-        echo "Servidor conectado correctamete, Bienvenido".$user."!!"; 
-
         $sentencia = "INSERT INTO `user` ( `nom_usuario`, `correo`, `contrasena`)
         VALUES ('$nombreUsuario','$email','$pass1')";
 
@@ -42,8 +35,5 @@
             echo "Bienvenido ".$nombreUsuario . "con correo :".$email; 
         }else{
             echo "Error al registrarse";
-    }
-    }else{
-        echo "No se pudo conectar al servidor".mysqli_connect_error();
-    }
+        }
 ?>
