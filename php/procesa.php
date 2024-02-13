@@ -35,8 +35,9 @@
             session_start();
             header('location: ../user.html');
         }else{
+            echo "prueba";
             echo "Error al registrarse";
         }
-   
+
 ?>
 
