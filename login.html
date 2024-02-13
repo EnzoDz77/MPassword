@@ -40,7 +40,7 @@
     <!-- Código de las plataformas de Análisis -->
     <script></script>
     <!-- Scripts a cargar antes de la renderización -->
-    <script src=""></script>
+    <script src="./js/script.js"></script>
   </head>
   <body>
     <div id="container">
@@ -63,11 +63,12 @@
       <main>
         <!-- section y article (posibilidades dentro de main) -->
             <section class="login_usuario">
-              <form class="loginF"  method="post"  onsubmit="return validarLogin()" novalidate>
+              <form action="./php/procesa.php" class="loginF"  method="post"  onsubmit="return validarLogin()" novalidate>
                 <img class="logo_UsuarioLogin" src="./svg/logoUsuarioLogin.svg" alt="logo">
                 
                 <input type="text" id="nomUser" name="nomUser" placeholder="Usuario">
                 <input type="password" id="pass" name="pass" placeholder="Contraseña">
+                <input type="hidden" name="accion" value="login">
                 <input type="submit" value="Acceso">
 
 

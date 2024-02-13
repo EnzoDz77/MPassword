@@ -1,4 +1,14 @@
 
+function validarLogin(){
+    let nomUlo=document.getElementById("nomUser").value;
+    let passLo = document.getElementById("pass").value;
+
+    //Valido que los campos no esten vaciós
+    if (  nomUlo === "" || passLo === "") {
+        alert("¡¡USUARIO O CONTRASEÑA INCORRECTA!!");
+        return false;
+    }
+}
 
 // Validación de Registro 
 function validarRegistro(){
