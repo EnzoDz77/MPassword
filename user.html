@@ -54,7 +54,10 @@
           </a>
           <!-- Botones -->
           <a href="login.html" class="header__boton-ingresar">Ver Contraseñas</a>
-          <a href="index.html" class="header__boton-info">Cerrar Sesión</a>
+
+          <form action="./php/cerrar_sesion.php" method="post">
+            <button class="header__boton-info" type="submit" name="cerrarSesionBtn">Cerrar Sesión</button>
+          </form>
           </nav>
       </header>
       

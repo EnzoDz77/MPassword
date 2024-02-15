@@ -41,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Si el resultado devuelve true va a dirigir al usuario a la generadorPro
             if ($resultado) {
+                $_SESSION["nomUserRegis"] = $nombreUsuario; // Establecer la variable de sesión
                 header("location: ../user.html");
                 exit();
             }
@@ -54,13 +55,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $resultadoLogin = mysqli_query($conector, $consulta2);
         // Si encuentra ese usuario registrado en la base de datos ingresa al generadorPro
         if (mysqli_num_rows($resultadoLogin) > 0) {
+            $_SESSION["nomUser"] = $nomUserLogin; // Establecer la variable de sesión
             header("location: ../user.html");
             exit();
         } else {
             echo "Nombre de usuario o contraseña incorrecta.";
         }
     } 
-} 
+}
+
+
+// Guardar contraseña
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['password'])) {
+    // Obtener la contraseña enviada desde el formulario
+    $password = $_POST['password'];
+
+    // Suponiendo que tengas el nombre de usuario del usuario actual almacenado en alguna variable de sesión
+    $nombreUsuario_Login = $_SESSION["nomUser"]; // Asegúrate de cambiar esto por la variable de sesión correcta
+    $nombreUsuario_Registro = $_SESSION["nomUserRegis"];
+
+    // Consulta para obtener el ID del usuario
+    $consultaUsuario_Login = "SELECT id_usuario FROM user WHERE nom_usuario = '$nombreUsuario_Login'";
+    $resultado_usuario = $conector->query($consultaUsuario_Login);
+
+
+    if ($resultado_usuario->num_rows > 0 ) {
+        // Obtenemos el ID del usuario
+        $fila_usuario = $resultado_usuario->fetch_assoc();
+        $id_usuario = $fila_usuario['id_usuario'];
+
+        // Insertamos la contraseña en la tabla password
+        $sql = "INSERT INTO password (id_usuario, contrasenas) VALUES ('$id_usuario', '$password')";
+        if ($conector->query($sql) === TRUE) {
+            echo "Contraseña guardada correctamente";
+        } else {
+            echo "¡Error al guardar la contraseña: " ;
+        }
+    } else {
+        echo "No se encontró ningún usuario con el nombre de usuario proporcionado.";
+    }
+
+    $conector->close();
+}
 ?>
 
 
