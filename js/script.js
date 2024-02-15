@@ -1,4 +1,7 @@
 
+
+
+
 function validarLogin(){
     let nomUlo=document.getElementById("nomUser").value;
     let passLo = document.getElementById("pass").value;
@@ -210,3 +213,21 @@ boton.addEventListener("click", () => {
 })
 }
 
+function guardarContraseña(event) {
+    event.preventDefault(); // Evita que el formulario se envíe
+
+    var password = document.getElementById("passwordText").innerText;
+    var formData = new FormData();
+    formData.append('password', password);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', './php/procesa.php', true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            alert('Contraseña guardada con éxito!');
+        } else {
+            alert('=>Error al guardar la contraseña');
+        }
+    };
+    xhr.send(formData);
+}
