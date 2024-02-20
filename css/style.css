@@ -41,6 +41,7 @@
 /* Colores */
 :root {
   
+  --colo-amarillo-suave: #c2c478;
   --colo-estado-bueno: #b26014;
   --color-blanco: #ffffff;
   --color-botones-info-ingresar: #000000e3;
@@ -51,14 +52,13 @@
   --color-texto-pagina: #faff03;
   --cuadro-contraseñas: #000000a6;
   --cuadro-loginy-registro: #00000085;
-  
 }
 /* ******************************** */
 body{
   
   background-image: url(../img/desktop/imagenFondo1.webp);
   background-position: center center;
-  background-size: cover; /* Esto ajusta el tamaño de la imagen para cubrir todo el cuerpo */
+  background-size: cover; 
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -119,7 +119,7 @@ header{
       }
     }
     
-
+    
     & .header__boton-ingresar,.header__boton-info{
       padding: 15px 40px;
       border-radius: 8px;
@@ -131,7 +131,7 @@ header{
     }
 
     & .header__boton-info {
-      margin-left: 5px; /* Espacio entre botones */
+      margin-left: 8px; /* Espacio entre botones */
     }
   }
 }
@@ -165,41 +165,20 @@ header{
   margin: auto;
 }
 
-/* #passwordDisplay { 
-  margin: 20px;
-  padding: 10px;
-  font-family: "AleoRegular";
-  font-size: 20px;
-  background-color: var(--cuadro-contraseñas);
-  border: none;
-  border-radius: 8px;
-  color: var(--color-texto-pagina);
-  transform: translateX(
-    -7%
-  )           // Mueve el texto ligeramente hacia la izquierda 
-  
-  width: 42%; // O ajusta el ancho según tus necesidades 
-  box-sizing: border-box; // Incluye el padding en el ancho total 
-  height: 75px; // Ajusta la altura del campo de contraseña según tus necesidades 
-  
-  
-  text-align: left;
-  } */
-
-  #passwordDisplay{
+#passwordDisplayBasico{
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "AleoRegular";
   font-size: 20px;
   background: var(--cuadro-contraseñas);
-  width: 89%;
+  width: 650px;
   height: 65px;
-  padding: 12px;
-  margin: 40px;
+  padding: 15px;
+  margin: 30px;
   border-radius: 8px;
   color: var(--color-texto-pagina);
-  }
+}
 
 .refrescar {
   cursor: pointer;
@@ -218,9 +197,10 @@ header{
 }
 
 .btn_copiar{
+      height: 60px;
       cursor: pointer;
       border: none;
-      padding: 15px 40px;
+      width: 120px;
       border-radius: 8px;
       background: var(--color-botones-info-ingresar);
       color: var(--color-texto-pagina);
@@ -253,10 +233,9 @@ footer {
   justify-content: center;
   align-items: center;
   
-  transform: translateX(
-    -13%
-  ); /* Mueve el texto ligeramente hacia la izquierda */
+  transform: translateX(-13%); /* Mueve el texto ligeramente hacia la izquierda */
 }
+
 .loginF {
   display: inline-flex;
   flex-direction: column;
@@ -265,7 +244,6 @@ footer {
   width: 320px;
   height: 350px;
   padding: 16px;
-  
   border-radius: 10px;
   border-radius: 20px;
   background-color: var(--cuadro-loginy-registro);
@@ -286,11 +264,11 @@ footer {
 }
 
 #pass{
-  padding-left: 30px; /* Espacio para el icono a la izquierda */
-  background-image: url('../svg/icoUsuarioContra.svg'); /* Ruta a tu archivo SVG */
+  padding-left: 30px; 
+  background-image: url('../svg/icoUsuarioContra.svg'); 
   background-repeat: no-repeat;
-  background-position: 5px 50%; /* Ajusta según sea necesario */
-  background-size: 18px 18px; /* Ajusta el tamaño del icono según sea necesario */
+  background-position: 5px 50%; 
+  background-size: 18px 18px; 
 }
 form input[type="password"],form input[type="text"]{
 	width: 180px;
@@ -324,9 +302,9 @@ form input[type="submit"]{
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 20px; /* Ajusta el margen según sea necesario */
-  width: 300px; /* Ajusta el tamaño según tus necesidades */
-  height: 300px; /* Ajusta el tamaño según tus necesidades */
+  margin: 20px; 
+  width: 300px; 
+  height: 300px; 
   
 }
 
@@ -378,27 +356,27 @@ form input[id="Ccuenta"]{
 }
 
 #passRegis1,#passRegis2{
-  padding-left: 30px; /* Espacio para el icono a la izquierda */
-  background-image: url('../svg/icoUsuarioContra.svg'); /* Ruta a tu archivo SVG */
+  padding-left: 30px; 
+  background-image: url('../svg/icoUsuarioContra.svg'); 
   background-repeat: no-repeat;
-  background-position: 5px 50%; /* Ajusta según sea necesario */
-  background-size: 18px 18px; /* Ajusta el tamaño del icono según sea necesario */
+  background-position: 5px 50%; 
+  background-size: 18px 18px; /* Tamaño del icono */
 }
 
 #nomUserRegis{
-  padding-left: 30px; /* Espacio para el icono a la izquierda */
-  background-image: url('../svg/icoUsuarioR.svg'); /* Ruta a tu archivo SVG */
+  padding-left: 30px; 
+  background-image: url('../svg/icoUsuarioR.svg'); 
   background-repeat: no-repeat;
-  background-position: 5px 50%; /* Ajusta según sea necesario */
-  background-size: 18px 18px; /* Ajusta el tamaño del icono según sea necesario */
+  background-position: 5px 50%; 
+  background-size: 18px 18px; 
 }
 
 #emailRegis{
-  padding-left: 30px; /* Espacio para el icono a la izquierda */
-  background-image: url('../svg/icoGmail.svg'); /* Ruta a tu archivo SVG */
+  padding-left: 30px; 
+  background-image: url('../svg/icoGmail.svg'); 
   background-repeat: no-repeat;
-  background-position: 5px 50%; /* Ajusta según sea necesario */
-  background-size: 18px 18px; /* Ajusta el tamaño del icono según sea necesario */
+  background-position: 5px 50%; 
+  background-size: 18px 18px; 
 }
 
 /* Footer Registro HTML*/
@@ -407,19 +385,35 @@ form input[id="Ccuenta"]{
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 20px; /* Ajusta el margen según sea necesario */
-  width: 300px; /* Ajusta el tamaño según tus necesidades */
-  height: 300px; /* Ajusta el tamaño según tus necesidades */
+  margin: 20px; 
+  width: 300px; 
+  height: 300px; 
 }
 
 /* =========================================================================================== */
 
 /* USER HTML */
 
+
 .generador_contraseñaUsuario {
   text-align: center;
   margin: auto;
 }
+
+#passwordDisplayUsuario{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "AleoRegular";
+  font-size: 20px;
+  background: var(--cuadro-contraseñas);
+  width: 450px;
+  height: 65px;
+  padding: 15px;
+  border-radius: 8px;
+  color: var(--color-texto-pagina);
+}
+/* Animación del estado de contraseña */
 
 .estadoContraseña{
   display: inline-block;
@@ -427,27 +421,43 @@ form input[id="Ccuenta"]{
   color: var(--color-blanco);
   border-radius: 8px;
   height: 30px;
-  width: 30%;
-  margin-top: 10px;
-  padding: 2px;
+  width: 120px;
+  margin-top: 30px;
   font-family: 'AleoRegular';
+  transition: color 0.3s ease-in-out;
 }
 
-  #longitud {
-    width: 65px; /* Ajusta el ancho según tus necesidades */
-    padding: 8px;
+.estadoContraseña.segura {
+  background-color: var(--color-estado-seguro);
+  color: var(--color-blanco);
+}
+
+.estadoContraseña.muySegura {
+  background-color: var(--color-estado-muyseguro);
+  color: var(--color-blanco);
+}
+/* Contenedor principal */
+.longitud1{
+  display: flex;
+  gap: 50px;
+  padding: 15px;
+}
+#longitud {
+  text-align: center;
+    height: 65px;
+    width: 65px; 
     font-size: 16px;
     border: 1px solid black;
     border-radius: 5px;
     outline: none;
     color: var(--color-texto-pagina);
     background-color: var(--cuadro-contraseñas);
-  }
-  
-  #longitud:hover,
-  #longitud:focus {
+}
+
+
+#longitud:hover, #longitud:focus {
     border-color:var(--color-texto-pagina); 
-  }
+}
 
 
 label{
@@ -457,6 +467,78 @@ label{
 
 input[type="checkbox"] {
   display: inline-block; /* Mostrar en línea */
-  margin-right: 5px; /* Espacio entre los checkboxes */
+  margin-right: 5px; 
 }
+
+
+.btn_guardarC{
+  margin: 20px;
+  background-color: var(--color-botones-info-ingresar);
+  color: var(--color-texto-pagina);
+  border: none;
+  border-radius: 8px;
+}
+
+/* CHECKBOX */
+form {
+  margin: 15px;
+}
+
+.advanced-settings {
+  display: block;
+  font-family: 'AleoRegular';
+}
+
+.options label {
+  display: inline-block; /* Cambia a inline-block para alinear horizontalmente */
+  
+}
+
+.options input[type="checkbox"] {
+  display: inline-block; /* Cambia a inline-block para alinear horizontalmente */
+  
+  
+  text-align: center;
+}
+
+.conejo{
+  width: 480px;
+  height: auto; 
+}
+
+/* INFO HTML */
+
+.infoContraseña{
+  margin-top: -90px;
+}
+
+
+.info1, .info2, .info3 {
+  margin-top: 50px;
+  text-align: center;
+  display: inline-block; /* Cambio de 'block' a 'inline-block' */
+  margin-right: 20px; /* Añade un margen entre los elementos */
+  width: 250px;
+  height: 210px;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px var(--cuadro-contraseñas);
+  background-color: var(--cuadro-contraseñas);
+}
+
+h4{
+  font-family: 'AleoBold';
+  font-size: large;
+  color: var(--color-texto-pagina);
+}
+
+.infoP{
+  font-family: 'AleoLigth';
+  font-size:smaller;
+  color: var(--colo-amarillo-suave);
+}
+
+
+
+
+
 

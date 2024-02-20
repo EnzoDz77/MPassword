@@ -1,0 +1,69 @@
+<?php
+// Inicia la sesión
+session_start();
+
+// Incluye el archivo de conexión
+include("./conexion.php");
+
+// Verifica si el usuario ha iniciado sesión y $_SESSION["id_usuario"] tiene un valor
+if(isset($_SESSION["id_usuario"])) {
+    // Obtén el ID del usuario de la sesión
+    $idUsuario = $_SESSION["id_usuario"];
+
+    // Consulta SQL para seleccionar las contraseñas del usuario específico
+    $sentencia = "SELECT * FROM `password` WHERE `id_usuario` = '$idUsuario'"; 
+    $resContra = mysqli_query($conector, $sentencia);
+
+    // Verifica si la consulta fue exitosa
+    if($resContra) {
+        
+        // Obtiene el número de contraseñas encontradas
+        $num_Contra = mysqli_num_rows($resContra);
+
+        if($num_Contra > 0) {
+            // Muestra un mensaje informativo
+            echo "<br><br>Tienes <b>" . $num_Contra . "</b> contraseñas favoritas: ";
+
+            // Itera sobre los resultados
+            while($info = mysqli_fetch_assoc($resContra)) {
+                echo "<br><br> <b> ✔Contraseña:</b> " . $info['contrasenas'];
+            }
+        } else {
+            echo "<br>No se encontraron contraseñas para este usuario.";
+        }
+    } else {
+        echo "<br>Error al obtener los datos de la tabla <b>\"Passwords:\"</b>.";
+    }
+} else {
+    echo "<br>No se ha iniciado sesión o el ID de usuario no está definido.";
+}
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASSWORD</title>
+    
+    <style>
+        
+        .btnVolver{
+    
+            padding: 10px 20px;
+            background-color:cornflowerblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <button class="btnVolver" onclick="window.location.href='../user.html';">Volver Atrás</button>
+</body>
+</html>

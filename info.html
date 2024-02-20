@@ -37,7 +37,8 @@
     
     <!-- Se cambia el tema de algunos navegadores -->
     <meta name="theme-color" content="#fafafa" />
-    
+    <!-- Código de las plataformas de Análisis -->
+    <script></script>
     <!-- Scripts a cargar antes de la renderización -->
     <script src="./js/script.js"></script>
   </head>
@@ -53,60 +54,36 @@
             <h2>MPassword</h2>
           </a>
           <!-- Botones -->
-          <!-- Link para el archivo de la tabla -->
-          <a href="./tablaCon.html" class="header__boton-ingresar">Ver Contraseñas</a>
+          <a href="login.html" class="header__boton-ingresar">Ingresar</a>
           
-          <!-- Archivo para dirigirte a cerrar las sesiones. -->
-          <form action="./php/cerrar_sesion.php" method="post">
-            <button class="header__boton-info" type="submit" name="cerrarSesionBtn">Cerrar Sesión</button>
-          </form>
           </nav>
       </header>
       
       <!-- Main  -->
       <main>
         <!-- section y article (posibilidades dentro de main) -->
-            <section class="generador_contraseñaUsuario">
-              
-              <h1 class="tituloPagina">Generador de <br>contraseñas aleatorias</h1>
-              <div class="estadoContraseña">Buena</div>
-             
-                
-                
-                <div class="longitud1">
-                  <input type="number" id="longitud" name="longitud" min="8" max="20" value="8">
-
-                  <div id="passwordDisplayUsuario">
-                  <span id="passwordText">En7D5%2E</span>
-                  <img id="refrescarAvanzado"class="refrescar" src="./svg/actualizar.svg"   alt="Actualizar contraseña"/>
-                  </div> 
-
-                  <button class="btn_copiar" onclick="copiarPortapapeles()">Copiar</button>
+            <section class="infoContraseña">
+              <h1 class="tituloPagina">¿Cómo es una contraseña segura?</h1>
+                <div class="info1">
+                  <h4>Larga</h4>
+                  <p class="infoP">Cuanto más larga es una contraseña, más segura es. Una contraseña segura debe tener al menos 10 caracteres.</p>
                 </div>
-                
-              
-              
-              <button class="btn_guardarC" type="button" onclick="guardarContraseña(event)">Guardar Contraseña</button>
-              
-            
-              <form>
-                <label for="quantity" class="advanced-settings">Ajustes Avanzados:</label><br>
-                <label for="mayusculas"> ABC</label>
-                <input type="checkbox" id="mayusculas" name="mayusculas" value="ABC" checked>
-                <label for="minusculas"> abc</label>
-                <input type="checkbox" id="minusculas" name="minusculas" value="abc" checked>
-                <label for="numeros"> 123</label>
-                <input type="checkbox" id="numeros" name="numers" value="123" checked>
-                <label for="signos"> #@$</label>
-                <input type="checkbox" id="signos" name="signos" value="#@$" checked><br><br>
-              </form>
+                <div class="info2">
+                  <h4>Compleja</h4>
+                  <p class="infoP">Las contraseñas seguras utilizan una combinación de letras mayúsculas y minúsculas, números y símbolos para formar una cadena de caracteres impredecible que no se parezca a palabras o nombres.</p>
+                </div>
+                <div class="info3">
+                  <h4>Única</h4>
+                  <p class="infoP">Cada cuenta debe tener una contraseña segura y única para reducir la vulnerabilidad en caso de hackeo</p>
+                </div>
             </section>
 
       </main>
       
-
+              
       <!-- Footer (final de la página, zona inferior) -->
       <footer>
+          
       </footer>
     </div>
 

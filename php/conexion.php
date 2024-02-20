@@ -1,6 +1,6 @@
 <?php
 
-    // Conexión a la base de datos.
+    // Inicio la conexion a la base de datos.
     $host='localhost';
     $user="edib";
     $password="edib";
@@ -8,7 +8,7 @@
 
     $conector=mysqli_connect($host,$user,$password,$bd);
     if($conector){
-        echo "Servidor conectado correctamete, Bienvenido".$user."!!"; 
+        echo "¡Bienvenido!"; 
 
     }else{
         echo "No se pudo conectar al servidor".mysqli_connect_error();

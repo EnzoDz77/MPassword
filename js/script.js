@@ -1,7 +1,7 @@
 
 
 
-
+// =================== VALIDACIONES======================
 function validarLogin(){
     let nomUlo=document.getElementById("nomUser").value;
     let passLo = document.getElementById("pass").value;
@@ -56,66 +56,70 @@ function validarRegistro(){
 
     return true;
 }
+// =============================FIN DE LAS VALIDACIONES==============================================
+
 
 // ==================================================================================================
 // GENERADOR DE CONTRASEÑA BÁSICO
 
+// Función se ejecutará después de que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
-// Esta función se ejecutará después de que el DOM esté completamente cargado
-// Agregar el evento 'click' al elemento con el id 'refrescarBasico'
+
+// Agrego el evento 'click' al elemento con el id 'refrescarBasico'
 document.getElementById("refrescarBasico").addEventListener("click", actualizarContrasena);
 
-
+    // Creo la función para generar una contraseña aleatoria
     function generarContrasena() {
-    var letrasMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
-    var numeros = "0123456789";
-    var simbolos = "!@#$%^&*-_=+";
+    let letrasMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
+    let numeros = "0123456789";
+    let simbolos = "!@#$%^&*-_=+";
     
 
-    // Asegurarse de incluir al menos un carácter de cada tipo
-    var primeraSeccion = letrasMayusculas.charAt(Math.floor(Math.random() * letrasMayusculas.length));
-    var segundaSeccion = letrasMinusculas.charAt(Math.floor(Math.random() * letrasMinusculas.length));
-    var terceraSeccion = numeros.charAt(Math.floor(Math.random() * numeros.length));
-    var cuartaSeccion = simbolos.charAt(Math.floor(Math.random() * simbolos.length));
+    // Filtro para asegurar que al menos tenga un caracter de cada tipo en la contraseña 
+    let primeraSeccion = letrasMayusculas.charAt(Math.floor(Math.random() * letrasMayusculas.length));
+    let segundaSeccion = letrasMinusculas.charAt(Math.floor(Math.random() * letrasMinusculas.length));
+    let terceraSeccion = numeros.charAt(Math.floor(Math.random() * numeros.length));
+    let cuartaSeccion = simbolos.charAt(Math.floor(Math.random() * simbolos.length));
 
-    // Resto de la longitud de la contraseña después de incluir al menos un carácter de cada tipo
-    var longitudRestante = 4;
+    // Resto de la longitud de la contraseña despues de incluir al menos un caracter de cada tipo
+    let longitudRestante = 4;
     
     
-    var caracteres = letrasMayusculas + letrasMinusculas + numeros + simbolos;
-    var contrasena = primeraSeccion + segundaSeccion + terceraSeccion + cuartaSeccion;
+    let caracteres = letrasMayusculas + letrasMinusculas + numeros + simbolos;
+    let contrasena = primeraSeccion + segundaSeccion + terceraSeccion + cuartaSeccion;
 
-    // Eliminar caracteres utilizados en las secciones previas para evitar repeticiones
+    // Elimino caracteres utilizados para no repetir
     caracteres = caracteres.replace(primeraSeccion, '');
     caracteres = caracteres.replace(segundaSeccion, '');
     caracteres = caracteres.replace(terceraSeccion, '');
     caracteres = caracteres.replace(cuartaSeccion, '');
 
     // Generar el resto de la contraseña con caracteres aleatorios y sin repeticiones
-    for (var i = 0; i < longitudRestante; i++) {
-        var caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
-        // Verificar si el nuevo carácter es una letra mayúscula o minúscula y si el último carácter generado también lo es
+    for (let i = 0; i < longitudRestante; i++) {
+        let caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+        // Verificar si el nuevo caracter es una letra mayuscula o minuscula y si el ultimo caracter generado tambien lo es
         if ((letrasMayusculas.includes(contrasena.slice(-1)) || letrasMinusculas.includes(contrasena.slice(-1))) &&
             (letrasMayusculas.includes(caracterAleatorio) || letrasMinusculas.includes(caracterAleatorio))) {
-            // Si es así, elegir otro carácter aleatorio hasta que no sea una letra
+            // Si es asi, elegir otro caracter aleatorio hasta que no sea una letra
             while (letrasMayusculas.includes(caracterAleatorio) || letrasMinusculas.includes(caracterAleatorio)) {
                 caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
             }
         }
         contrasena += caracterAleatorio;
-        // Eliminar el carácter utilizado para evitar repeticiones
+        // Eliminar el caracter a utilizar para evitar repeticiones
         caracteres = caracteres.replace(caracterAleatorio, '');
     }
 
+    // Retorno la contraseña generada
     return contrasena;
     }
 
-// Función para manejar la generación de contraseña y la actualización del texto de la contraseña
+// Funcion para actualizar la contraseña generada
     function actualizarContrasena() {
-    var contrasenaGenerada = generarContrasena();
-    var passwordText = document.getElementById("passwordText");
-    // Actualizar solo el texto de la contraseña generada
+    let contrasenaGenerada = generarContrasena();
+    let passwordText = document.getElementById("passwordText");
+    // Actualizo el texto por la contraseña generada
     passwordText.textContent = contrasenaGenerada;
     }
 });
@@ -124,15 +128,14 @@ document.getElementById("refrescarBasico").addEventListener("click", actualizarC
 // =============================================================================================
 // GENERADOR DE CONTRASEÑA AVANZADO
 
+// Función se ejecutará después de que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
-// Esta función se ejecutará después de que el DOM esté completamente cargado
-// Agregar el evento 'click' al elemento con el id 'refrescarBasico'
+
+// Agrego el evento 'click' al elemento con el id 'refrescarAvanzado'
 document.getElementById("refrescarAvanzado").addEventListener("click", actualizarContrasenaAvanzada);
 
-
-
 function generarContrasenaAvanzada(){
-    // Obtener el estado de las casillas y la longitud desde el DOM
+    // En esta apartado tambien tengo ue obtener la longitud de contraseña
     let checkMayu = document.getElementById("mayusculas").checked;
     let checkMinu = document.getElementById("minusculas").checked;
     let checkNum = document.getElementById("numeros").checked;
@@ -146,11 +149,11 @@ function generarContrasenaAvanzada(){
     
     let contrasena = '';
     let caracteresRestantes = '';
-    // Verificar si todas las casillas están desmarcadas
+    // Verifico si todas las casillas estan desmarcadas y muestro menasje de error.
     if (!checkMayu && !checkMinu && !checkNum && !checkSign) {
        alert('¡ERROR! No puedes generar una contraseña vacía. ')
-   }
-    // Verificar si todas las casillas están desmarcadas
+    }
+    // Despues de mostrar el alert automatico se marcara una casilla aleatoria
     if (!checkMayu && !checkMinu && !checkNum && !checkSign) {
         // Marcar una casilla aleatoria por defecto
         const checkboxes = ["mayusculas", "minusculas", "numeros", "signos"];
@@ -164,10 +167,10 @@ function generarContrasenaAvanzada(){
         contrasena += letrasMinusculas.charAt(Math.floor(Math.random() * letrasMinusculas.length));
         contrasena += numeros.charAt(Math.floor(Math.random() * numeros.length));
         contrasena += simbolos.charAt(Math.floor(Math.random() * simbolos.length));
-        longitud -= 4; // Restar 4 caracteres de la longitud total
+        longitud -= 4; // Restar 4 caracteres de la longitud total.
     }
     
-    // Construir los caracteres restantes basados en las casillas marcadas
+    // Despedieno ue casillas esten marcadas estos se añadira a al contraseña 
     if (checkMayu) caracteresRestantes += letrasMayusculas;
     if (checkMinu) caracteresRestantes += letrasMinusculas;
     if (checkNum) caracteresRestantes += numeros;
@@ -183,44 +186,81 @@ function generarContrasenaAvanzada(){
     
     return contrasena;
    }
-
+    // Funcion para actualizar la contraseña generada
     function actualizarContrasenaAvanzada() {
-        var contrasenaGenerada = generarContrasenaAvanzada();
-        var passwordText = document.getElementById("passwordText");
-        // Actualizar solo el texto de la contraseña generada
+        let contrasenaGenerada = generarContrasenaAvanzada();
+        let passwordText = document.getElementById("passwordText");
+        // Actualizo el texto por la contraseña generada
         passwordText.textContent = contrasenaGenerada;
     }
 
 });
 
+
+// Me ejecutela función cuando el dom esta completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+// FUNCIÓN PARA LA ANIMACIÓN DEL ESTADO DE CONTRASEÑA
+function actualizarEstadoContraseña() {
+    const longitudContraseña = document.getElementById('longitud');
+    const estadoContraseñaV = document.querySelector('.estadoContraseña');
+  
+    longitudContraseña.addEventListener('input', function() {
+      if (this.value >= 15) {
+        estadoContraseñaV.textContent = 'Muy Segura';
+        estadoContraseñaV.classList.remove('segura');
+        estadoContraseñaV.classList.add('muySegura');
+      } else if (this.value >= 12) {
+        estadoContraseñaV.textContent = 'Segura';
+        estadoContraseñaV.classList.remove('muySegura');
+        estadoContraseñaV.classList.add('segura');
+      } else {
+        estadoContraseñaV.textContent = 'Buena';
+        estadoContraseñaV.classList.remove('segura', 'muySegura');
+      }
+    });
+  }
+    //Llamado a la función
+    actualizarEstadoContraseña();
+});
+
+
 // =============================================================================================
 // FUNCIÓN PARA EL BOTON COPIAR
 function copiarPortapapeles(){
 const boton = document.querySelector(".btn_copiar");
-const text = document.getElementById("passwordText");
 
-const copiarBtn = async str => {
-  try {
+const text = document.getElementById("passwordText");
+    if(boton){
+
+    const copiarBtn = async str => {
+    try {
     await navigator.clipboard.writeText(str);
     alert("¡¡La contraseña fué copiada  correctamente!!");
-  } catch (error) {
+    } catch (error) {
     console.log(error);
-  }
-};
+    }
+    };
 
-boton.addEventListener("click", () => {
+    boton.addEventListener("click", () => {
     copiarBtn(text.textContent);
-})
+    })
+   
+    }
 }
 
+
+
+// Función para guardar la contraseña primero pasara por este filtro de javascript
+// donde los datos se enviaran a procesa.php en ese archivo tengo toda la lógica para almacenar la contraseña 
+// del usuario en al base de datos.
 function guardarContraseña(event) {
     event.preventDefault(); // Evita que el formulario se envíe
 
-    var password = document.getElementById("passwordText").innerText;
-    var formData = new FormData();
+    let password = document.getElementById("passwordText").innerText;
+    let formData = new FormData();
     formData.append('password', password);
 
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open('POST', './php/procesa.php', true);
     xhr.onload = function () {
         if (xhr.status === 200) {

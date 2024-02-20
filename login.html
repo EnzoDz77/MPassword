@@ -61,32 +61,26 @@
       
       <!-- Main  -->
       <main>
+
         <!-- section y article (posibilidades dentro de main) -->
-            <section class="login_usuario">
+            <section class="login_usuario">   
+            <!-- El logueado pasara por una validación en JavaScript para luego pasar a enviar los datos a procesa.php -->
               <form action="./php/procesa.php" class="loginF"  method="post"  onsubmit="return validarLogin()" novalidate>
                 <img class="logo_UsuarioLogin" src="./svg/logoUsuarioLogin.svg" alt="logo">
-                
                 <input type="text" id="nomUser" name="nomUser" placeholder="Usuario">
                 <input type="password" id="pass" name="pass" placeholder="Contraseña">
                 <input type="hidden" name="accion" value="login">
                 <input type="submit" value="Acceso">
-
-
                 <a href="registro.html" class="text_Login"> 
                   ¿No tienes cuenta? Regístrate
                 </a>
-                
-            </form>
+              </form>
             </section>
 
       </main>
       <!-- Footer (final de la página, zona inferior) -->
       <footer>
-        
-        
         <img class="img_login" src="./img/desktop/imgLoginRegistro.webp" alt="logo">
-        
-
       </footer>
     </div>
 
