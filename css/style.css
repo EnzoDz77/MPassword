@@ -515,6 +515,7 @@ form {
 
 .info1, .info2, .info3 {
   margin-top: 50px;
+  
   text-align: center;
   display: inline-block; /* Cambio de 'block' a 'inline-block' */
   margin-right: 20px; /* Añade un margen entre los elementos */
@@ -538,7 +539,9 @@ h4{
 }
 
 
-
+.icoSegura, .icoCompleja, .icoLarga{
+  padding: 10px;
+}
 
 
 

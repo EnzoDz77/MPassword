@@ -8,7 +8,7 @@
 
     $conector=mysqli_connect($host,$user,$password,$bd);
     if($conector){
-        echo "¡Bienvenido!"; 
+        echo "¡Hola!<br>"; 
 
     }else{
         echo "No se pudo conectar al servidor".mysqli_connect_error();

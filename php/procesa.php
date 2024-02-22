@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nomUserLogin = $_POST["nomUser"];
         $passLogin = $_POST['pass'];
 
-        $consultaLogin = "SELECT * FROM `user` WHERE `nom_usuario` = '$nomUserLogin' AND `contrasena` = '$passLogin'";
+        $consultaLogin = "SELECT * FROM `user` WHERE  BINARY `nom_usuario` = '$nomUserLogin' AND BINARY `contrasena` = '$passLogin'";
         $resultadoLogin = mysqli_query($conector, $consultaLogin);
         // Si encuentra ese usuario registrado en la base de datos ingresa al generadorPro
         if (mysqli_num_rows($resultadoLogin) > 0) {
