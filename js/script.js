@@ -226,27 +226,17 @@ function actualizarEstadoContraseña() {
 
 // =============================================================================================
 // FUNCIÓN PARA EL BOTON COPIAR
-function copiarPortapapeles(){
-const boton = document.querySelector(".btn_copiar");
+$(document).on("click", ".btn_copiar", function () {
+    const text = $("#passwordText");
 
-const text = document.getElementById("passwordText");
-    if(boton){
-
-    const copiarBtn = async str => {
-    try {
-    await navigator.clipboard.writeText(str);
-    alert("¡¡La contraseña fué copiada  correctamente!!");
-    } catch (error) {
-    console.log(error);
+    if (text.length > 0) {
+        var contrasena = text.text();
+        var textarea = $("<textarea>").val(contrasena).appendTo("body").select();
+        document.execCommand("copy");
+        textarea.remove();
+        alert("¡La contraseña fue copiada correctamente!");
     }
-    };
-
-    boton.addEventListener("click", () => {
-    copiarBtn(text.textContent);
-    })
-   
-    }
-}
+});
 
 
 

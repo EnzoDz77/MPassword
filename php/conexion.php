@@ -2,9 +2,9 @@
 
     // Inicio la conexion a la base de datos.
     $host='bbdd.enzomejiaedib.com';
-    $user="ddb220370";
-    $password="xpljluwtq--V4p";
-    $bd="ddb220370";
+    $user="ddb220382";
+    $password="lyjkWRNEk_6?;3";
+    $bd="ddb220382";
 
     $conector=mysqli_connect($host,$user,$password,$bd);
     if($conector){
