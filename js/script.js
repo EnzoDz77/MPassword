@@ -200,19 +200,21 @@ function generarContrasenaAvanzada(){
 // Me ejecutela función cuando el dom esta completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
 // FUNCIÓN PARA LA ANIMACIÓN DEL ESTADO DE CONTRASEÑA
-function actualizarEstadoContraseña() {
+function actualizarEstadoContrasena() {
     const longitudContraseña = document.getElementById('longitud');
     const estadoContraseñaV = document.querySelector('.estadoContraseña');
-  
+    // Si la longitud de la contraseña es mayor o igual 15 saldra el estado muy seguro
     longitudContraseña.addEventListener('input', function() {
       if (this.value >= 15) {
         estadoContraseñaV.textContent = 'Muy Segura';
         estadoContraseñaV.classList.remove('segura');
         estadoContraseñaV.classList.add('muySegura');
+    // Si la longitud de la contraseña es mayor o igual 12 saldra el estado segura
       } else if (this.value >= 12) {
         estadoContraseñaV.textContent = 'Segura';
         estadoContraseñaV.classList.remove('muySegura');
         estadoContraseñaV.classList.add('segura');
+    // Si la longitud de la contraseña es menor a 12 saldra estado buena
       } else {
         estadoContraseñaV.textContent = 'Buena';
         estadoContraseñaV.classList.remove('segura', 'muySegura');
@@ -220,18 +222,21 @@ function actualizarEstadoContraseña() {
     });
   }
     //Llamado a la función
-    actualizarEstadoContraseña();
+    actualizarEstadoContrasena();
 });
 
 
 // =============================================================================================
 // FUNCIÓN PARA EL BOTON COPIAR
 $(document).on("click", ".btn_copiar", function () {
+    // Variable de la barra contraseña
     const text = $("#passwordText");
 
     if (text.length > 0) {
         var contrasena = text.text();
         var textarea = $("<textarea>").val(contrasena).appendTo("body").select();
+        // La función document.execCommand("copy") es una función 
+        //  que se utiliza para copiar el texto seleccionado al portapapeles del sistema.
         document.execCommand("copy");
         textarea.remove();
         alert("¡La contraseña fue copiada correctamente!");
@@ -241,16 +246,16 @@ $(document).on("click", ".btn_copiar", function () {
 
 
 // Función para guardar la contraseña primero pasara por este filtro de javascript
-// donde los datos se enviaran a procesa.php en ese archivo tengo toda la lógica para almacenar la contraseña 
 // del usuario en al base de datos.
 function guardarContraseña(event) {
     event.preventDefault(); // Evita que el formulario se envíe
-
+    // Obteniendo el valor de la contraseña
     let password = document.getElementById("passwordText").innerText;
     let formData = new FormData();
     formData.append('password', password);
 
     let xhr = new XMLHttpRequest();
+    // donde los datos se enviaran a procesa.php en ese archivo tengo toda la lógica para almacenar la contraseña 
     xhr.open('POST', './php/procesa.php', true);
     xhr.onload = function () {
         if (xhr.status === 200) {
