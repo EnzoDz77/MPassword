@@ -17,14 +17,14 @@ if(isset($_SESSION["id_usuario"])) {
     // Verifica si la consulta fue exitosa
     if($resContra) {
         
-        // Obtiene el número de contraseñas encontradas
+        // Obtener el numero de contraseña encontradas.
         $num_Contra = mysqli_num_rows($resContra);
 
         if($num_Contra > 0) {
-            // Muestra un mensaje informativo
+            // Mostrar mensaje
             echo "<br><br>Tienes <b>" . $num_Contra . "</b> contraseñas favoritas: ";
 
-            // Itera sobre los resultados
+            
             while($info = mysqli_fetch_assoc($resContra)) {
                 echo "<br><br> <b> ✔Contraseña:</b> " . $info['contrasenas'];
             }
