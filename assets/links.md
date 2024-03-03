@@ -2,7 +2,7 @@
 https://www.figma.com/file/ZrXNcIGwBJYaATKqw1Uc5S/Proyecto-Final-de-Curso?type=whiteboard&node-id=0%3A1&t=xulFDWWqwQOyhUmw-1
 
 <!-- Enlace de Figma -->
-https://www.figma.com/file/aWmGwYxGidQqI5qTLBn6Eh/SecurityPass?type=design&node-id=0%3A1&mode=design&t=oCbDlHaqtygHgCYj-1
+https://www.figma.com/file/aWmGwYxGidQqI5qTLBn6Eh/SecurityPass?type=design&node-id=0%3A1&mode=design&t=aBahYEKYuWAOdF3O-1
 
 <!-- Enlace de GitHub -->
 https://github.com/EnzoDz77/MPassword.git
