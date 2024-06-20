@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PASSWORD</title>
-    
+    <link rel="stylesheet" href="../css/style.css" />
     <style>
         .cuadro_contrase{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
+            background-color: #ffffffcf;
             border-radius: 10px;
+            padding: 12px;
         }
-
-        
 
         .btnVolver{
     
@@ -29,6 +25,8 @@
     </style>
 </head>
 <body>
+<section class="generador_contraseñaBasico">
+<h1 class="tituloPagina">Estas son tus contraseñas<br>favoritas...</h1>
 <div class="cuadro_contrase">
 <?php
 // Inicia la sesión
@@ -54,7 +52,7 @@ if(isset($_SESSION["id_usuario"])) {
 
         if($num_Contra > 0) {
             // Mostrar mensaje
-            echo "<br><br>Tienes <b>" . $num_Contra . "</b> contraseñas favoritas: ";
+            echo "<br>Tienes <b>" . $num_Contra . "</b> contraseñas: ";
 
             
             while($info = mysqli_fetch_assoc($resContra)) {
@@ -74,5 +72,6 @@ if(isset($_SESSION["id_usuario"])) {
     <br><br>
     <button class="btnVolver" onclick="window.location.href='../user.html';">Volver Atrás</button>
     </div>
+</section>
 </body>
 </html>
