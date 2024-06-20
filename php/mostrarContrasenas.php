@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASSWORD</title>
+    
+    <style>
+        .cuadro_contrase{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        
+
+        .btnVolver{
+    
+            padding: 10px 20px;
+            background-color:cornflowerblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="cuadro_contrase">
 <?php
 // Inicia la sesión
 session_start();
@@ -37,33 +69,10 @@ if(isset($_SESSION["id_usuario"])) {
 } else {
     echo "<br>No se ha iniciado sesión o el ID de usuario no está definido.";
 }
-?>
+?>   
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PASSWORD</title>
-    
-    <style>
-        
-        .btnVolver{
-    
-            padding: 10px 20px;
-            background-color:cornflowerblue;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: auto;
-        }
-    </style>
-</head>
-<body>
     <br><br>
     <button class="btnVolver" onclick="window.location.href='../user.html';">Volver Atrás</button>
+    </div>
 </body>
 </html>
